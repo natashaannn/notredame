@@ -1,0 +1,19 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "Montserrat", sans-serif
+}
+
+h1 {
+  text-align: center;
+}
+
+.description {
+  width: 1000px;
+  text-align: center;
+  margin: auto;
+  background-color: grey;
+  opacity: 0.5;
+  padding: 20px;
+  border-radius: 5px;
+  }
