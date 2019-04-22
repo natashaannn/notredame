@@ -1,0 +1,22 @@
+{
+  "name": "notredame",
+  "version": "1.0.0",
+  "description": "Notredame Website URL: https://sentimentsofnotredame.herokuapp.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natashaannn/notredame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natashaannn/notredame/issues"
+  },
+  "homepage": "https://github.com/natashaannn/notredame#readme",
+  "dependencies": {
+    "three": "^0.103.0"
+  }
+}
