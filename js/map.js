@@ -8,6 +8,7 @@ var container = document.getElementById( 'container' );
 
 //Load 3D Scene
 var scene = new THREE.Scene();
+scene.fog = new THREE.Fog( scene.background, 3500, 15000 );
 
 //Load Camera Perspective
 var camera = new THREE.PerspectiveCamera(
