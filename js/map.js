@@ -1,7 +1,10 @@
 //WebGL Error Message
 if ( WEBGL.isWebGLAvailable() === false ) {
-  document.body.appendChild( WEBGL.getWebGLErrorMessage() );
+  container.appendChild( WEBGL.getWebGLErrorMessage() );
 }
+
+//Get container
+var container = document.getElementById( 'container' );
 
 //Load 3D Scene
 var scene = new THREE.Scene();
@@ -22,7 +25,7 @@ renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-document.body.appendChild( renderer.domElement );
+container.appendChild( renderer.domElement );
 
 // Load the Orbitcontroller
 var controls = new THREE.OrbitControls( camera, renderer.domElement );
@@ -38,9 +41,9 @@ scene.add( directionalLight );
 
 //Ground
 var groundgeometry = new THREE.PlaneBufferGeometry( 18000000, 9000000 );
-var groundmat = new THREE.MeshPhongMaterial ( { color: 0xd3d3d3} );
+var groundmat = new THREE.MeshPhongMaterial ( { color: 0x000000} );
 var ground = new THREE.Mesh( groundgeometry, groundmat );
-ground.position.y = - 500;
+ground.position.y = -300;
 ground.receiveshadow = true;
 ground.rotation.x = - Math.PI / 2.0;
 scene.add( ground );
@@ -70,15 +73,16 @@ var loader = new THREE.GLTFLoader();
 var sphere = new THREE.SphereBufferGeometry( 200, 100, 8 );
 sphere.opacity = 0.5;
 var light1 = new THREE.PointLight( 0xffa700, 2.5, 25000 );
-light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffa700 } ) ) );
+light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffa700, transparent: true } ) ) );
+light1.opacity = 0.5;
 light1.position.set( 3000, 0, -8000 );
 light1.castShadow = true;
 light1.opacity=0.5;
 scene.add( light1 );
 
 //Set up shadow properties for the light
-light1.shadow.mapSize.width = 18000;
-light1.shadow.mapSize.height = 9000;
+light1.shadow.mapSize.width = 18000000;
+light1.shadow.mapSize.height = 9000000;
 light1.shadow.camera.near = 1;
 light1.shadow.camera.far = 1000;
 
