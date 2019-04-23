@@ -69,22 +69,38 @@ var loader = new THREE.GLTFLoader();
       }
     );
 
-//Light spheres
-var sphere = new THREE.SphereBufferGeometry( 200, 100, 8 );
-sphere.opacity = 0.5;
-var light1 = new THREE.PointLight( 0xffa700, 2.5, 25000 );
-light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffa700, transparent: true } ) ) );
-light1.opacity = 0.5;
-light1.position.set( 3000, 0, -8000 );
-light1.castShadow = true;
-light1.opacity=0.5;
-scene.add( light1 );
+//light sphere loop
+var emoji = ["a", "b", "c"];
+var lat = [5000, 6000, 7000];
+var long = [7000, 8000, 9000];
+
+for (var i=0; i<4; i++) {
+  var hue;
+
+  if (emoji[i] == "a") {
+    hue = 0xffa700;
+  }
+  else if (emoji[i] == "b") {
+    hue = 0xff5050;
+  }
+  else if (emoji[i] == "c") {
+    hue = 0x6699ff;
+  }
+
+  var sphere = new THREE.SphereBufferGeometry( 200, 100, 8 );
+  var light1 = new THREE.PointLight( hue, 2.5, 25000 );
+  light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: hue, transparent: true } ) ) );
+  light1.position.set( lat[i], 0, long[i] );
+  light1.castShadow = true;
+  scene.add( light1 );
+}
 
 //Set up shadow properties for the light
 light1.shadow.mapSize.width = 18000000;
 light1.shadow.mapSize.height = 9000000;
 light1.shadow.camera.near = 1;
 light1.shadow.camera.far = 1000;
+
 
 //Loop for Rendering
 function animate() {
