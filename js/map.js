@@ -6,7 +6,7 @@ var camera = new THREE.PerspectiveCamera(
   100, //Field of view
   window.innerWidth / window.innerHeight, //Aspect Ratio
   1, //Near
-  20000 //Far
+  18000000 //Far
 );
 camera.position.set( -10000, 1000, -4800 );
 
@@ -28,7 +28,7 @@ var directionalLight = new THREE.DirectionalLight( 0xffffff );
 directionalLight.position.set( 0, 1, 1 ).normalize();
 scene.add( directionalLight );
 
-//glTf Loader
+//Model glTf Loader
 var loader = new THREE.GLTFLoader();
   loader.load(
     'js/notredame/scene.gltf',
@@ -45,6 +45,19 @@ var loader = new THREE.GLTFLoader();
   	 //    console.log('an error occurred');
      //  }
     );
+
+//Load plane
+var planeGeometry = new THREE.PlaneGeometry( 5000, 100 );
+var material = new THREE.MeshBasicMaterial( {color: 0x000000, side: THREE.DoubleSide} );
+var plane = new THREE.Mesh( geometry, material );
+scene.add( plane );
+
+//Light spheres
+var sphere = new THREE.SphereBufferGeometry( 200, 100, 8 );
+var light1 = new THREE.PointLight( 0xffa700, 2.5, 50000 );
+light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffa700 } ) ) );
+light1.position.set( 3000, 0, -8000 );
+scene.add( light1 );
 
 //Loop for Rendering
 function animate() {
