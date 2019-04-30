@@ -1,3 +1,6 @@
+//require
+var csv = require('node_modules/jquery-csv/src/jquery.csv.js');
+
 //WebGL Error Message
 if ( WEBGL.isWebGLAvailable() === false ) {
   container.appendChild( WEBGL.getWebGLErrorMessage() );
@@ -71,22 +74,49 @@ var loader = new THREE.GLTFLoader();
     );
 
 //light sphere loop
-var emoji = ["a", "b", "c"];
-var lat = [-5000, -6000, -7000];
-var long = [-7000, -8000, -9000];
+// var emoji = ["a", "b", "c"];
+// var lat = [-5000, -6000, -7000];
+// var long = [-7000, -8000, -9000];
+var lat;
+var long;
+
+//parse geolocation data
+$.ajax({
+    url: "data/testlat1.csv",
+    async: false,
+    success: function (csvd) {
+        data = $.csv.toArrays(csvd);
+    },
+    dataType: "text",
+    complete: function () {
+        lat = data;
+    }
+});
+
+$.ajax({
+    url: "data/testlong1.csv",
+    async: false,
+    success: function (csvd) {
+        data = $.csv.toArrays(csvd);
+    },
+    dataType: "text",
+    complete: function () {
+        long = data;
+    }
+});
 
 for (var i=0; i<4; i++) {
-  var hue;
+  var hue = 0xffa700;
 
-  if (emoji[i] == "a") {
-    hue = 0xffa700;
-  }
-  else if (emoji[i] == "b") {
-    hue = 0xff5050;
-  }
-  else if (emoji[i] == "c") {
-    hue = 0x6699ff;
-  }
+  // if (emoji[i] == "a") {
+  //   hue = 0xffa700;
+  // }
+  // else if (emoji[i] == "b") {
+  //   hue = 0xff5050;
+  // }
+  // else if (emoji[i] == "c") {
+  //   hue = 0x6699ff;
+  // }
 
   var sphere = new THREE.SphereBufferGeometry( 10 );
   var light1 = new THREE.PointLight( hue, 2.5, 250000, 2 );
