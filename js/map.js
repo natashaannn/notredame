@@ -15,7 +15,7 @@ var camera = new THREE.PerspectiveCamera(
   100, //Field of view
   window.innerWidth / window.innerHeight, //Aspect Ratio
   10, //Near
-  180000 //Far
+  1800000 //Far
 );
 camera.position.set( -10000, 3000, -4800 );
 
@@ -44,7 +44,7 @@ scene.add( directionalLight );
 var groundgeometry = new THREE.PlaneBufferGeometry( 18000000, 9000000 );
 var groundmat = new THREE.MeshPhongMaterial ( { color: 0x000000} );
 var ground = new THREE.Mesh( groundgeometry, groundmat );
-ground.position.y = -300;
+ground.position.y = -700;
 ground.receiveshadow = true;
 ground.rotation.x = - Math.PI / 2.0;
 scene.add( ground );
@@ -55,7 +55,7 @@ var loader = new THREE.GLTFLoader();
     'js/notredame/scene.gltf',
     function ( gltf ) {
       var object = gltf.scene;
-      gltf.scene.scale.set( 0.5, 0.5, 0.5 );
+      gltf.scene.scale.set( 2, 2, 2 );
 	    gltf.scene.position.x = 0;
       gltf.scene.position.y = 0;
 	    gltf.scene.position.z = 0;
@@ -63,7 +63,7 @@ var loader = new THREE.GLTFLoader();
       gltf.receiveShadow = true;
 
       // first sphere
-      var distance = 700;
+      var distance = 100;
       var hue = 0xffa700;
       var geometry = new THREE.SphereBufferGeometry();
       var material = new THREE.MeshBasicMaterial( { color: hue, transparent: true, opacity: 0.3 } );
@@ -77,11 +77,11 @@ var loader = new THREE.GLTFLoader();
         map: spriteMap,
         color: hue,
         transparency: true,
-        opacity: 0.1,
+        opacity: 0.3,
         blending: THREE.AdditiveBlending
       });
 
-      var spritesize = 250;
+      var spritesize = 700;
       var spritesize2 = spritesize/2;
 
       var sprite = new THREE.Sprite( spriteMaterial );
