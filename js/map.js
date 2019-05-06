@@ -14,8 +14,8 @@ var clock = new THREE.Clock();
 var camera = new THREE.PerspectiveCamera(
   100, //Field of view
   window.innerWidth / window.innerHeight, //Aspect Ratio
-  1, //Near
-  18000000 //Far
+  10, //Near
+  18000 //Far
 );
 camera.position.set( -10000, 1000, -4800 );
 
@@ -50,19 +50,83 @@ ground.rotation.x = - Math.PI / 2.0;
 scene.add( ground );
 
 
-//Model glTf Loader
+// //Model glTf Loader
+// var loader = new THREE.GLTFLoader();
+//   loader.load(
+//     'js/notredame/scene.gltf',
+//     function ( gltf ) {
+//       var object = gltf.scene;
+//       gltf.scene.scale.set( 0.5, 0.5, 0.5 );
+// 	    gltf.scene.position.x = 0;
+//       gltf.scene.position.y = 0;
+// 	    gltf.scene.position.z = 0;
+//       gltf.castShadow = true;
+//       gltf.receiveShadow = false;
+//   	  scene.add(gltf.scene);
+//      },
+//      undefined,
+//      function ( error ) {
+//   	    console.log('an error occurred');
+//       }
+//     );
+//
+// // first sphere
+// var hue = 0xffa700;
+// var geometry = new THREE.SphereBufferGeometry();
+// var material = new THREE.MeshBasicMaterial( { color: hue, transparent: true, opacity: 0.3 } );
+// var sphere = new THREE.Mesh( geometry, material);
+// sphere.position.set( lat[0]/1000, 0, long[0]/1000);
+//
+// // sprite glow
+// var spriteMap = new THREE.TextureLoader().load( "images/glow.png" );
+// var spriteMaterial = new THREE.SpriteMaterial(
+// {
+//   map: spriteMap,
+//   color: hue,
+//   transparency: true,
+//   opacity: 0.3,
+//   blending: THREE.AdditiveBlending
+// });
+// var sprite = new THREE.Sprite( spriteMaterial );
+// sprite.scale.set(500,500,500);
+// sphere.add(sprite);
+// var sprite1 = new THREE.Sprite( spriteMaterial );
+// sprite1.scale.set(250,250,250);
+// sphere.add(sprite1);
+//
+// //light loop
+// for (var i=1; i<10; i++) {
+//   geometry1 = new THREE.SphereGeometry();
+//   var light = new THREE.Mesh ( geometry1, material);
+//
+//   var sprite1 = new THREE.Sprite( spriteMaterial );
+//   sprite1.scale.set(500, 500, 500);
+//   light.add(sprite1);
+//   var sprite2 = new THREE.Sprite( spriteMaterial );
+//   sprite2.scale.set(250, 250, 250);
+//   light.add(sprite2);
+//
+//   light.add(sprite1);
+//
+//   light.position.set( (lat[i]-lat[0])/1000, 0, (long[i]-long[0])/1000);
+//   sphere.add(light);
+// }
+//
+// scene.add(sphere);
+
+// Model glTf Loader
 var loader = new THREE.GLTFLoader();
   loader.load(
     'js/notredame/scene.gltf',
     function ( gltf ) {
       var object = gltf.scene;
-      gltf.scene.scale.set( 2, 2, 2 );
+      gltf.scene.scale.set( 0.5, 0.5, 0.5 );
 	    gltf.scene.position.x = 0;
       gltf.scene.position.y = 0;
 	    gltf.scene.position.z = 0;
       gltf.castShadow = true;
       gltf.receiveShadow = false;
-  	  scene.add(gltf.scene);
+      scene.add(gltf.scene);
      },
      undefined,
      function ( error ) {
@@ -70,14 +134,12 @@ var loader = new THREE.GLTFLoader();
       }
     );
 
-var lat = [-5000, -6000, -7000];
-var long = [-7000, -8000, -9000];
-
 // first sphere
 var hue = 0xffa700;
 var geometry = new THREE.SphereBufferGeometry();
 var material = new THREE.MeshBasicMaterial( { color: hue, transparent: true, opacity: 0.3 } );
 var sphere = new THREE.Mesh( geometry, material);
+sphere.position.set( lat[0]/1000, 0, long[0]/1000);
 
 // sprite glow
 var spriteMap = new THREE.TextureLoader().load( "images/glow.png" );
@@ -90,32 +152,31 @@ var spriteMaterial = new THREE.SpriteMaterial(
   blending: THREE.AdditiveBlending
 });
 var sprite = new THREE.Sprite( spriteMaterial );
-sprite.scale.set(1000, 1000, 1000);
+sprite.scale.set(500,500,500);
 sphere.add(sprite);
 var sprite1 = new THREE.Sprite( spriteMaterial );
-sprite1.scale.set(500, 500, 500);
+sprite1.scale.set(250,250,250);
 sphere.add(sprite1);
 
 //light loop
-for (var i=1; i<lat.length; i++) {
+for (var i=1; i<10; i++) {
   geometry1 = new THREE.SphereGeometry();
   var light = new THREE.Mesh ( geometry1, material);
 
   var sprite1 = new THREE.Sprite( spriteMaterial );
-  sprite1.scale.set(1000, 1000, 1000);
+  sprite1.scale.set(500, 500, 500);
   light.add(sprite1);
   var sprite2 = new THREE.Sprite( spriteMaterial );
-  sprite2.scale.set(500, 500, 500);
+  sprite2.scale.set(250, 250, 250);
   light.add(sprite2);
 
   light.add(sprite1);
 
+  light.position.set( (lat[i]-lat[0])/1000, 0, (long[i]-long[0])/1000);
   sphere.add(light);
-  light.position.set( lat[i], 0, long[i]);
 }
 
 scene.add(sphere);
-sphere.position.set( lat[0], 0, long[0]);
 
 //Loop for Rendering
 function animate() {
