@@ -1,6 +1,3 @@
-//require
-var csv = require('node_modules/jquery-csv/src/jquery.csv.js');
-
 //WebGL Error Message
 if ( WEBGL.isWebGLAvailable() === false ) {
   container.appendChild( WEBGL.getWebGLErrorMessage() );
@@ -73,86 +70,52 @@ var loader = new THREE.GLTFLoader();
       }
     );
 
-//light sphere loop
-// var emoji = ["a", "b", "c"];
-// var lat = [-5000, -6000, -7000];
-// var long = [-7000, -8000, -9000];
-var lat;
-var long;
+var lat = [-5000, -6000, -7000];
+var long = [-7000, -8000, -9000];
 
-//parse geolocation data
-$.ajax({
-    url: "data/testlat1.csv",
-    async: false,
-    success: function (csvd) {
-        data = $.csv.toArrays(csvd);
-    },
-    dataType: "text",
-    complete: function () {
-        lat = data;
-    }
+// first sphere
+var hue = 0xffa700;
+var geometry = new THREE.SphereBufferGeometry();
+var material = new THREE.MeshBasicMaterial( { color: hue, transparent: true, opacity: 0.3 } );
+var sphere = new THREE.Mesh( geometry, material);
+
+// sprite glow
+var spriteMap = new THREE.TextureLoader().load( "images/glow.png" );
+var spriteMaterial = new THREE.SpriteMaterial(
+{
+  map: spriteMap,
+  color: hue,
+  transparency: true,
+  opacity: 0.3,
+  blending: THREE.AdditiveBlending
 });
+var sprite = new THREE.Sprite( spriteMaterial );
+sprite.scale.set(1000, 1000, 1000);
+sphere.add(sprite);
+var sprite1 = new THREE.Sprite( spriteMaterial );
+sprite1.scale.set(500, 500, 500);
+sphere.add(sprite1);
 
-$.ajax({
-    url: "data/testlong1.csv",
-    async: false,
-    success: function (csvd) {
-        data = $.csv.toArrays(csvd);
-    },
-    dataType: "text",
-    complete: function () {
-        long = data;
-    }
-});
+//light loop
+for (var i=1; i<lat.length; i++) {
+  geometry1 = new THREE.SphereGeometry();
+  var light = new THREE.Mesh ( geometry1, material);
 
-for (var i=0; i<4; i++) {
-  var hue = 0xffa700;
-
-  // if (emoji[i] == "a") {
-  //   hue = 0xffa700;
-  // }
-  // else if (emoji[i] == "b") {
-  //   hue = 0xff5050;
-  // }
-  // else if (emoji[i] == "c") {
-  //   hue = 0x6699ff;
-  // }
-
-  var sphere = new THREE.SphereBufferGeometry( 10 );
-  var light1 = new THREE.PointLight( hue, 2.5, 250000, 2 );
-  light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: hue, transparent: true, opacity: 0.3 } ) ) );
-  light1.position.set( lat[i], 0, long[i] );
-  light1.castShadow = false;
-  scene.add( light1 );
-
-  var spriteMap = new THREE.TextureLoader().load( "images/glow.png" );
-  var spriteMaterial = new THREE.SpriteMaterial(
-  {
-    map: spriteMap,
-    color: hue,
-    transparency: true,
-    opacity: 0.3,
-    blending: THREE.AdditiveBlending
-  });
-  var sprite = new THREE.Sprite( spriteMaterial );
-  sprite.scale.set(1000, 1000, 1000);
-  light1.add(sprite);
   var sprite1 = new THREE.Sprite( spriteMaterial );
-  sprite1.scale.set(500, 500, 500);
-  light1.add(sprite1);
+  sprite1.scale.set(1000, 1000, 1000);
+  light.add(sprite1);
+  var sprite2 = new THREE.Sprite( spriteMaterial );
+  sprite2.scale.set(500, 500, 500);
+  light.add(sprite2);
 
+  light.add(sprite1);
+
+  sphere.add(light);
+  light.position.set( lat[i], 0, long[i]);
 }
 
-//Set up shadow properties for the light
-light1.shadow.mapSize.width = 18000000;
-light1.shadow.mapSize.height = 9000000;
-light1.shadow.camera.near = 1;
-light1.shadow.camera.far = 1000;
-
-// SUPER SIMPLE GLOW EFFECT
-// use sprite because it appears the same from all angles
-
-
+scene.add(sphere);
+sphere.position.set( lat[0], 0, long[0]);
 
 //Loop for Rendering
 function animate() {
