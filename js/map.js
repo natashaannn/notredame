@@ -61,6 +61,55 @@ var loader = new THREE.GLTFLoader();
 	    gltf.scene.position.z = 0;
       gltf.castShadow = true;
       gltf.receiveShadow = true;
+
+      // first sphere
+      var distance = 700;
+      var hue = 0xffa700;
+      var geometry = new THREE.SphereBufferGeometry();
+      var material = new THREE.MeshBasicMaterial( { color: hue, transparent: true, opacity: 0.3 } );
+      var sphere = new THREE.Mesh( geometry, material);
+      sphere.position.set( lat[0]/distance, 0, long[0]/distance);
+
+      // sprite glow
+      var spriteMap = new THREE.TextureLoader().load( "images/glow.png" );
+      var spriteMaterial = new THREE.SpriteMaterial(
+      {
+        map: spriteMap,
+        color: hue,
+        transparency: true,
+        opacity: 0.1,
+        blending: THREE.AdditiveBlending
+      });
+
+      var spritesize = 250;
+      var spritesize2 = spritesize/2;
+
+      var sprite = new THREE.Sprite( spriteMaterial );
+      sprite.scale.set(spritesize,spritesize,spritesize);
+      sphere.add(sprite);
+      var sprite1 = new THREE.Sprite( spriteMaterial );
+      sprite1.scale.set(spritesize2,spritesize2,spritesize2);
+      sphere.add(sprite1);
+
+      //light loop
+      for (var i=1; i<lat.length; i++) {
+        geometry1 = new THREE.SphereGeometry();
+        var light = new THREE.Mesh ( geometry1, material );
+
+        var sprite = new THREE.Sprite( spriteMaterial );
+        sprite.scale.set(spritesize,spritesize,spritesize);
+
+        var sprite1 = new THREE.Sprite( spriteMaterial );
+        sprite1.scale.set(spritesize2,spritesize2,spritesize2);
+
+        light.add(sprite);
+        light.add(sprite1);
+
+        light.position.set( (lat[i]-lat[0])/distance, 0, (long[i]-long[0])/distance);
+        sphere.add(light);
+      }
+
+      gltf.scene.add(sphere);
       scene.add(gltf.scene);
      },
      undefined,
@@ -69,83 +118,26 @@ var loader = new THREE.GLTFLoader();
       }
     );
 
-// first sphere
-var distance = 700;
-var hue = 0xffa700;
-var geometry = new THREE.SphereBufferGeometry();
-var material = new THREE.MeshBasicMaterial( { color: hue, transparent: true, opacity: 0.3 } );
-var sphere = new THREE.Mesh( geometry, material);
-// sphere.position.set( latset(0)/distance, 0, longset(0)/distance);
-sphere.position.set( lat[0]/distance, 0, long[0]/distance);
-
-// sprite glow
-var spriteMap = new THREE.TextureLoader().load( "images/glow.png" );
-var spriteMaterial = new THREE.SpriteMaterial(
-{
-  map: spriteMap,
-  color: hue,
-  transparency: true,
-  opacity: 0.1,
-  blending: THREE.AdditiveBlending
-});
-
-var spritesize = 250;
-var spritesize2 = spritesize/2;
-
-var sprite = new THREE.Sprite( spriteMaterial );
-sprite.scale.set(spritesize,spritesize,spritesize);
-sphere.add(sprite);
-var sprite1 = new THREE.Sprite( spriteMaterial );
-sprite1.scale.set(spritesize2,spritesize2,spritesize2);
-sphere.add(sprite1);
-
-//light loop
-for (var i=1; i<lat.length; i++) {
-  geometry1 = new THREE.SphereGeometry();
-  var light = new THREE.Mesh ( geometry1, material );
-
-  var sprite = new THREE.Sprite( spriteMaterial );
-  sprite.scale.set(spritesize,spritesize,spritesize);
-
-  var sprite1 = new THREE.Sprite( spriteMaterial );
-  sprite1.scale.set(spritesize2,spritesize2,spritesize2);
-
-  light.add(sprite);
-  light.add(sprite1);
-
-  light.position.set( (lat[i]-lat[0])/distance, 0, (long[i]-long[0])/distance);
-  // light.position.set( latset.has(i)/distance, 0, longset.has(i)/distance);
-  sphere.add(light);
-}
-
 //changing array into set for faster runtime
 // var latset = new Set(lat);
 // var longset = new Set(long);
-// var distance = 1000;
 //
 // latset.forEach( latvalue => {
-//   geometry1 = new THREE.SphereGeometry();
-//   var light = new THREE.Mesh ( geometry1, material );
+//     geometry1 = new THREE.SphereGeometry();
+//     var light = new THREE.Mesh ( geometry1, material );
 //
-//   var sprite = new THREE.Sprite( spriteMaterial );
-//   sprite.scale.set(spritesize,spritesize,spritesize);
+//     var sprite = new THREE.Sprite( spriteMaterial );
+//     sprite.scale.set(spritesize,spritesize,spritesize);
 //
-//   var sprite1 = new THREE.Sprite( spriteMaterial );
-//   sprite1.scale.set(spritesize2,spritesize2,spritesize2);
+//     var sprite1 = new THREE.Sprite( spriteMaterial );
+//     sprite1.scale.set(spritesize2,spritesize2,spritesize2);
 //
-//   light.add(sprite);
-//   light.add(sprite1);
+//     light.add(sprite);
+//     light.add(sprite1);
 //
-//   light.position.set( (latvalue/distance, 0, 100);
-//   sphere.add(light);
-//
-//
+//     light.position.set( latvalue/distance, 0, 100);
+//     sphere.add(light);
 // });
-//
-scene.add(sphere);
-
-
-
 
 //Loop for Rendering
 function animate() {
