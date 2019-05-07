@@ -105,6 +105,11 @@ function animate() {
 	}
 
 function render() {
+  // var time = Date.now() * 0.00025;
+	// var d = 150;
+  //
+  // gltf.scene.scale.set( Math.sin(time*0.7)*d, Math.cos(time*0.3)*d, Math.sin(time*0.5)*d);
+
   renderer.render(scene,camera);
 }
 
