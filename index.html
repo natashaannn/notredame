@@ -37,7 +37,7 @@
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="text-analysis">
     <h2 class="w3-text-light-grey">Text Analysis</h2>
     <hr style="width:200px" class="w3-opacity">
-    <iframe style='width: 848px; height: 546px;' src='//voyant-tools.org/tool/Cirrus/?palette=e087c5c6ba2dd52cdf822637d1e5836f&stopList=keywords-7edba047fb173cb3cd7092fba78f67fc&whiteList=&corpus=8a717f58de89143e52a123b9fc0fd404'></iframe>
+    <iframe style='width: 400px; height: 300px;' src='//voyant-tools.org/tool/Cirrus/?palette=4ac84b5760ef3ebfe97fd65c2586fb36&stopList=keywords-3f83ee6cea67e0eef0bc1865a3b038ca&whiteList=&corpus=6d378e6a74e248095460446280f1362d'></iframe>
     <p>lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
       ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
       adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -48,9 +48,43 @@
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="narrative">
     <h2 class="w3-text-light-grey">Narrative</h2>
     <hr style="width:200px" class="w3-opacity">
-    <p>lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <p>On Monday, April 16th, 2019 in Paris, France at 6:20 PM the first of two alarm sounds could be heard ringing in the Notre Dame Cathedral. This first alarm sound was heard during mass service and everyone was evacuated from the building. When the second alarm sound was heard at 6:43 PM a fire was officially declared. It was not until the following morning that firefighters and Laurent Nunez, a junior interior minister, declared the fire fully extinguished. During this time frame a whirlwind of news articles, live videos, and responses to the fire could be seen circulating Twitter as new videos of the cathedral, new updates, along with gestures of moral support and a discussion of rebuilding Notre Dame began to take place. The fire at Notre Dame not only received widespread news coverage but serves as a case study for understanding how social media platforms serve to circulate and receive information on high profile, real time events. Through these platforms all users are now able to participate in the documentation, proliferation, and construction of narratives and memory making.
+
+      <br><br>This interest in exploring how social media platforms serve in the creation of digital collectives or imagined communities along with how recent the Notre Dame fire occurred motivated our team to initiate this research project. Viewing Twitter data through the lens of “imagined communities” a term coined by Benedict Anderson, allow us to account for how the harm of a French cultural icon might spark a digital, global community far beyond its reach. Sentiments of Notre Dame sets out to explore how Twitter users shaped the narrative of the Notre Dame fire looking at tweets responding to the Notre Dame fire during and after the event to view how these dialogues changed and how far in the globe these interactions reach.
+
+      <h3 class="w3-text-light-grey">Significance</h3>
+      <br>
+      <h4 class="w3-text-light-grey">Audience</h4>
+      <p>The Sentiments of Notre Dame project was created with the intention of being used by a wide ranging, general public to serve as an entry point for anyone who is interested in exploring the impact and relevance of social media data in articulating collective memory, contemporary discourse, and a sense of community in a digital age. However, we also imagine this project will serve the interests and needs of academic scholars in a variety of fields including but not limited to history, cultural studies, sociology, art history, and linguistics. This project offers a model for the use of text analysis on Twitter data including tweet text and emojis. In addition, this project offers a conceptual framework for noting the intricate complexities of collective memory making in a digital, global society. This project is able to demonstrate how several different Humanities disciplines can utilize social media data analytics for research and offers examples of visualizations that can be utilized for this type of research.
+      </p>
+      <br>
+
+      <h4 class="w3-text-light-grey">Technical Specifications</h4>
+      <p>The first stage of data scraping for tweets was completed utilizing the the twitter archiving tool TAGS. TAGS was useful in collecting a wide variety of different Twitter user data such as text, user location, when the tweet was create, etc. all within a single Google Sheet for easy access and viewing purposes. OpenRefine was utilized for data cleaning purposes after certain categories of information were selected as the focus of this project. OpenRefine was an appropriate tool for data cleaning because it allowed us to effectively merge and edit various responses to create consistency across all data entries. Voyant Tools, an open source web based application, was used to complete text analysis on the tweets collected to pinpoint and visualize the progressions of different topics and dialogues centering the Notre Dame fire.</p>
+      <br>
+
+      <h4 class="w3-text-light-grey">Data Selection</h4>
+      <p>Data for the Notre Dame Sentiments project was scrapped utilizing Python and the twitter archiving tool TAGS. Our data selection initially focused on collecting Twitter data promptly following the events of the Notre Dame fire by searching for the term “Notre Dame” on TAGS in tweets from the day of the event. We had initially set out to explore the information collected from tweets focusing on designated English and French tweets, geographical locations, and the content of the tweets. Following this initial stage of data collection, we then decided to collect data from the one week period following the Notre Dame fire to help identify the progression of initial conversations and observations by Twitter users. At the beginning of this project we set out to investigate the how reactions between different language users who might have a different range of investment in the conservation and reconstruction of Notre Dame. Similarly with geographical locations, we wanted to explore how people across the globe who have a wide range of perspectives on Notre Dame articulated their reaction to the fire. In addition, the team also analyzed emojis collected from tweets. As a new convention of digital communication, analyzing emoji use allowed us to further investigate the varied reactions and positions Twitter users were taking in conveying their thoughts on the Notre Dame fire and the responses from public figures.
+      </p>
+      <br>
+
+      <h4 class="w3-text-light-grey">Description of Work Plan</h4>
+      <p>The work plan for this project involved several different stages and goals including collecting and cleaning data, data cleaning, producing spatial visualizations, producing visualizations for text analysis on the content of tweets including emojis. While utilizing the TAGS tool offered the team an array of possibility for exploring how Twitter users reacted to the Notre Dame fire we decided to focus this research project on the language and geographical locations of the tweets along with the text. We set out to explore how these different factors might contribute towards a specific stance on the Notre Dame fire or serve to help reveal any specific trends in our data. We had to clean the data for the geographical locations to ensure that all entries were consistent and that any arbitrary information was not included in this category of data.
+      <br><br>After cleaning data for geographical locations we had to produce latitude and longitude for all the locations to create an interactive spatial visualization that centers the structure of Notre Dame and spans outward to the locations from where user were tweeting. This visualization was produced to demonstrate the complexities of digital communication in a globalized society where people across the world are able to articulate conversations, interactive discourse, and community across nations on topics beyond the scope of their everyday lives.
+      <br><br>To enhance the scope of this project and the complex ways in which people are now articulating and participating in wider discourse we also analyzed the use of emojis within the tweets. The use of emojis in tweets was compiled using Python and was analyzed looking through the varied quantities and categorizations of the top 20 emojis used during different days. The number of instance an emoji occured and changes in emoji categories were analyzed to help define the general sentiments and reactions twitter user had over the Notre Dame fire. The use of emoji analysis helped augment the text analysis of tweet completed through the ____ feature/s on Voyant Tools. All of the visualizations and text analysis competed for this project were compiled to be publicly showcased  for other scholars, Twitter users, and the general public to explore the topic and potentially use this project as a model for research endeavours on the Notre Dame fire or other topics.
+      </p>
+      <br>
+
+      <h3 class="w3-text-light-grey">Findings</h3>
+      <img src="images\NotreDameFireTweets_staticmap.jpg" alt="NotreDameFireTweetsLocation" style="width:500px;">
+      <p>The geographical locations of where the tweets originates from covers a wide array of locations across the world, however they appear to be dispersed unevenly. The locations with the highest number of tweets appears to be North America, specifically concentrating on the United State of America, and Europe followed along by South America. A possible bias in this information is that the keywords “notre dame” recalled tweets in primarily French and English. However, this possible bias fails to account for the concentration of tweets from South America in comparison to other continents such as Australia. In South America the the official language of most countries is Spanish, with several exceptions such as Brazil, however it still shows a higher number of tweets on the Notre Dame fire than Australia whose official language designated is English. The low number of tweets on the Notre Dame fire from Australia indicate a possible correlation between the spatial geography and the concentration of tweets. While Australia fits within the language parameters of our Twitter scraping its further proximity to Notre Dame in comparison to other English speaking countries might account for the low number of tweets.
+      <br><br>
+      <div id="emoji-cloud-1"></div><br><em>Day of Fire</em>
+      <div id="emoji-cloud-2"></div><br><em>4 Days After Fire</em><br>
+      The emojis used in the tweets that were collected assist in portraying how reactions and emotions were conveyed through out the initial events of the fire to a period of a week following the Notre Dame fire. Distinctive shifts in the use of emoji also serve to visualize and mark shifts in the tone of the conversation regarding the fire and the attention being directed at Notre Dame. Different types of emojis were used to communicate emotional reactions, including facial expressions, hand gestures, flags along with other expressive icons such as hearts. The use of flags marks an importance shift in Twitter user conversations and situate the dominance of a high profile event like the Notre Dame fire that received wide coverage. The day prior to the Notre Dame fire four different flags were included in the top twenty emojis being used. The flags for France, England, the United Kingdom, and Syria were prevalent in twitter users discussion possibly indicating that the focus of discussion was on the missile strike launched by the United States, France, and the United Kingdom on Syria. However, after the next day when the Notre Dame fire occured the only flag prevalent in the twenty used emojis was the French flag. While the prevalent use of the French emoji helps indicate a shift in the overarching conversation the use of facial expressions designates varied reactions that complicate how people might have perceived the Notre Dame fire and attention being directed towards the cathedral beyond what news outlets issue. For example the day of the fire, the top three emojis used were the “loudly crying face,” french flag, and “broken heart” emojis the majority of the emojis used fell along this tone or sentiment of being upset or in distress over the fire, designated the location of the event (i.e. the church or “latin cross” emoji), or offered moral support through the “folded hands” emoji otherwise known as the praying hands emoji. Nevertheless, there was an outlier on the day of the event that fell outside this tone of grief, dejecton or moral support which was the “face with tears of joy.” Emojis that disrupted this notion of grief and support for Notre Dame became more prevalent in the conversation as time progressed shifting the tone of the discourse to allow space for a more critical perception of the attention being directed at Notre Dame following the fire.
+      </p>
+      <br>
+
     </p>
   </div>
 
@@ -58,29 +92,33 @@
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
     <h2 class="w3-text-light-grey">About</h2>
     <hr style="width:200px" class="w3-opacity">
-    <p>lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <p>We are a team of students from the University of California, Los Angeles. This project was embarked on as part of our Digital Humanities course, DH 150: Advanced Topics in Digital Humanities: Social Media Data Analytics, under the instrucation of Dr. Sanders Garcia.
     </p>
-    <div class="w3-row w3-padding-32">
-      <div class="w3-third">
-        <p>Natasha Ann</p>
-        <img src="images/natasha.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+    <div>
+      <h3 class="w3-text-light-grey">Our team comprises of:</h3>
+      <div>
+        <h4>Elizabeth Nakamura</h4>
       </div>
-
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="images/natasha.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      <div>
+        <h4>Leia Yen</h4>
       </div>
-
-      <div class="w3-third">
-        <p>Name</p>
-        <img src="images/natasha.jpg" class="w3-round" alt="Random Name" style="width:60%">
+      <div>
+        <h4>Natasha Ann</h4>
+      </div>
+      <div>
+        <h4>Rocio Sanchez-Nolasco</h4>
+      </div>
+      <div>
+        <h4>Van Ngyuen</h4>
       </div>
     </div>
   </div>
 
 </body>
+
+<script type="text/javascript" src="node_modules/javiros-emoji-cloud/dist/emojicloud.js"></script>
+<script type="text/javascript" src="node_modules/javiros-emoji-cloud/dist/wordcloud.js"></script>
+<script type="text/javascript" src="js/emoji.js"></script>
 
 <script src="js/node_modules/three/build/three.js"></script>
 <script src="js/node_modules/three/examples/js/loaders/GLTFLoader.js"></script>
