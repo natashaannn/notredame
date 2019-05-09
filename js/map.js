@@ -95,6 +95,7 @@ if ( WEBGL.isWebGLAvailable() === false ) {
        function ( error ) {
     	    console.log('an error occurred');
         }
+      );
 
 
 //Loop for Rendering
@@ -104,7 +105,6 @@ function animate() {
 	}
 
 function render() {
-
   renderer.render(scene,camera);
 }
 

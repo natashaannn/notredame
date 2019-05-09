@@ -1,4 +1,4 @@
-EmojiCloud('#emoji-cloud-2', {
+EmojiCloud('#emoji-cloud-1', {
   data: [
     {
       "unicode": "🚨",
