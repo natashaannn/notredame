@@ -1,4 +1,4 @@
-EmojiCloud('#emoji-cloud-1', {
+new EmojiCloud('#emoji-cloud-1', {
   data: [
     {
       "unicode": "1F6A8",
