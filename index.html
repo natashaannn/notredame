@@ -17,7 +17,9 @@
     <div class="w3-bar w3-black w3-card">
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-      <a href="#text-analysis" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TEXT-ANALYSIS</a>
+      <a href="#geolocation-analysis" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GEOLOCATION ANALYSIS</a>
+            <a href="#emoji-analysis" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EMOJI ANALYSIS</a>
+      <a href="#text-analysis" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TEXT ANALYSIS</a>
       <a href="#narrative" class="w3-bar-item w3-button w3-padding-large w3-hide-small">NARRATIVE</a>
       <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
     </div>
@@ -33,13 +35,53 @@
 
     <div id="container"></div>
 
+    <!-- Geolocation Analysis Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="geolocation-analysis">
+      <h2 class="w3-text-light-grey">Geolocation Analysis</h2>
+      <hr style="width:200px" class="w3-opacity">
+      <p>The main visualization of Notre Dame surrounded by thousands of light spheres is a 3D visualization powered by three.js, and was inspired by the ritual lighting of memorial candles in rememberance of someone or something of significance. Each light sphere represents a tweet with the "notredame" hashtag, and its position relative to the Notre Dame model is according to the geolocation metadata of the tweet. 5000 twitter datasets were loaded onto this webscape to create a virtual memorial for a symbol so well-known across the world. The visualization's orbit camera is centered on Notre Dame, and when the user explores the visualization further by zooming out from Notre Dame and rotating the webscape, he/she will notice the semblance of a world map created by the light spheres. This is a world map unlike one that we would be familiar with - it is one that is not marked by any borders, be they political, territorial or historical. It is simply a collection of thoughts of people from all over who share a common interest in the downfall of the Notre Dame. In the words of the great political scientist and historian, Benedict Anderson, this is an
+        <em>imagined community</em> bonded by a shared feeling of grief.</p>
+      <img src="images\NotreDameFireTweets_staticmap.jpg" alt="NotreDameFireTweetsLocation" style="width:500px;">
+      <p><em>Heatmap of Notre Dame Tweet Geolocations created on Tableau</em></p>
+        <p>A more detailed analysis of the geolocation of the tweets reveals interesting trends. The geographical locations of where the tweets originates from covers a wide array of locations across the world, however they appear to be dispersed unevenly. The locations with the highest number of tweets appears to be North America, specifically concentrating on the United States of America, and Europe followed along by South America. A possible bias in this information is that the keywords “notre dame” recalled tweets in primarily French and English. However, this possible bias fails to account for the concentration of tweets from South America in comparison to other continents such as Australia. In South America the the official language of most countries is Spanish, with several exceptions such as Brazil, however it still shows a higher number of tweets on the Notre Dame fire than Australia whose official language designated is English. The low number of tweets on the Notre Dame fire from Australia indicate a possible correlation between the spatial geography and the concentration of tweets. For example, while Australia fits within the language parameters of our Twitter scraping its further proximity to Notre Dame in comparison to other English speaking countries might account for the low number of tweets. Even though globalization has had the effect of time-space compression andhas arguably made the world a smaller and more interconnected place, spatial proximity between people and objects still does matter even in the case of an international symbol and event so widely publicized on the media.
+      </p>
+    </div>
+
+  <!-- Emoji Analysis Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="emoji-analysis">
+    <h2 class="w3-text-light-grey">Emoji Analysis</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <div id="emoji-cloud-1"></div>
+    <br><em>Day of Fire</em><br><br>
+    <div id="emoji-cloud-2"></div><br><em>4 Days After Fire</em><br>
+    <p>
+      The emojis used in the tweets that were collected assist in portraying how reactions and emotions were conveyed through out the initial events of the fire to a period of a week following the Notre Dame fire. Marcel Danesi argues that the informal, visual language of emojis “certainly has the implications for what a universal form of language might look like” since it does not require skilled training to decode or use, hybridizes words and images to make reading easy and accessible, and is a form of digital communication that is globally used. He notes that cultural differences influence emoji development, usage, and interpretation, but suggests that “the core lexicon of the emoji code,” emojis that “[contain] signs that are consistent with core vocabularies in general,” are recognizable across the world because “they are interpretable in a straightforward fashion” (157–58, 40–46). Emojis, then, may be a helpful gauge of tones in international conversations that can overcome linguistic differences.
+      <br><br>
+      Distinctive shifts in the use of emoji serve to visualize and mark shifts in the tone of the conversation regarding the fire and the attention being directed at Notre Dame. Different types of emojis were used to communicate emotional reactions, including facial expressions, hand gestures, flags along with other expressive icons such as hearts. The use of flags marks an importance shift in Twitter user conversations and situate the dominance of a high profile event like the Notre Dame fire that received wide coverage. The day prior to the Notre Dame fire four different flags were included in the top twenty emojis being used. The flags for France, England, the United Kingdom, and Syria were prevalent in twitter users discussion possibly indicating that the focus of discussion was on the missile strike launched by the United States, France, and the United Kingdom on Syria. However, after the next day when the Notre Dame fire occured the only flag prevalent in the twenty used emojis was the French flag. While the prevalent use of the French emoji helps indicate a shift in the overarching conversation the use of facial expressions designates varied reactions that complicate how people might have perceived the Notre Dame fire and attention being directed towards the cathedral beyond what news outlets issue. For example the day of the fire, the top three emojis used were the “loudly crying face,” french flag, and “broken heart” emojis the majority of the emojis used fell along this tone or sentiment of being upset or in distress over the fire, designated the location of the event (i.e. the church or “latin cross” emoji), or offered moral support through the “folded hands” emoji otherwise known as the praying hands emoji. Nevertheless, there was an outlier on the day of the event that fell outside this tone of grief, dejecton or moral support which was the “face with tears of joy,” which is usually used to represent laughing and teasing. Emojis that disrupted this notion of grief and support for Notre Dame became more prevalent in the conversation as time progressed shifting the tone of the discourse to allow space for a more critical perception of the attention being directed at Notre Dame following the fire.
+    </p>
+  </div>
+
   <!-- Text Analysis Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="text-analysis">
     <h2 class="w3-text-light-grey">Text Analysis</h2>
     <hr style="width:200px" class="w3-opacity">
-    <iframe style='width: 400px; height: 300px;' src='//voyant-tools.org/tool/Cirrus/?palette=4ac84b5760ef3ebfe97fd65c2586fb36&stopList=keywords-3f83ee6cea67e0eef0bc1865a3b038ca&whiteList=&corpus=6d378e6a74e248095460446280f1362d'></iframe>
-    <p>Word cloud of key phrases used in the conversation about the Notre Dame fire. Navigate through the various documents representing the conversations that follow day by day!</p>
+      <iframe style='width: 400px; height: 300px; display: inline-block; float: left; padding-right: 20px;' src='//voyant-tools.org/tool/Cirrus/?palette=4ac84b5760ef3ebfe97fd65c2586fb36&stopList=keywords-3f83ee6cea67e0eef0bc1865a3b038ca&whiteList=&corpus=6d378e6a74e248095460446280f1362d'></iframe>
+      <a href="//voyant-tools.org/tool/Cirrus/?palette=4ac84b5760ef3ebfe97fd65c2586fb36&stopList=keywords-3f83ee6cea67e0eef0bc1865a3b038ca&whiteList=&corpus=6d378e6a74e248095460446280f1362d">
+        <img src="images\linksanimation.gif" alt="Text Analysis GIF" style="height: 300px; display: inline-block;">
+      </a>
+    <p>
+      <em>
+        The first visualization is a word cloud of frequently used terms in the conversation about the Notre Dame fire. Use the Scale menu to explore the corpus by day. The second visualization is a GIF animation of how word correlations and networks surrounding the most frequently used terms evolved each day. Click on the GIF to explore the corpus.
+      </em>
+      <br><br>
+      In Voyant, we explored textual trends in our corpus of tweets from April 15th—the start of the Notre Dame fire—to April 22nd. We divided the corpus by day to understand how Twitter conversations evolved over the duration of the week that followed the event. Both Voyant’s Cirrus tool, a word cloud generator that visualizes text based on word frequency, and Links tool, a visualization that shows correlations between the most frequently words used in the corpus, reflected how conversations surrounding Notre Dame and the imagined communities rallying around its iconography expanded and changed over time. Tweets over the first day reflected observation of the events, responses of grief, and philanthropy as reflected through words like “destroy,” “fire,” “loss,” and “rebuild.” As the days ensued, Twitter users began to use Notre Dame as a starting point to talk about other important social justice issues that attention to Notre Dame neglected or occluded. For example, references to “black churches” became frequent in the corpus as Twitter users urged the public to consider the equal importance of the recent destruction of three black churches in Louisiana by “racist arson.” This particular finding represents trends in the Notre Dame Twitter conversations about biases that establish some national symbols as more important than others and how that translates to philanthropic prioritization. Conversations about challenging sociohistorical colonial hierarchies continued on the final day of the Notre Dame corpus, a day that marked the Easter Day bombings in Sri Lanka that killed almost 300 people. Twitter users challenged those who felt moved to donate to Notre Dame to also consider how their humanitarianism should address the needs of non-Western nations.
+      <br><br>
+      Another key emergence was Twitter conversations regarding environmental activism. References to the rainforest and the Great Pacific Garbage Patch began to increase in frequency as users used the billions of donations to Notre Dame to compare how much it would cost to address and fix these environmental concerns. The key terms “billionaires,” “billions,” “donating,” “donate” remained consistent across the corpus, but increases in the frequency of the word “hypocrisy” and “bragging” over time suggested that conversations regarding philanthropic aid took on layers of skepticism as users believed that the monetary assistance could be better applied elsewhere.
+      <br><br>
+      The textual trends in the Notre Dame tweets are indicative of how the power and definition of national symbols are being questioned. The destruction of Notre Dame is a powerful national symbol that created and united imaginary communities across geographic and international boundaries through public grief. However, as Twitter users witnessed the power of imagined communities built on symbols that represent cultural, social, and historical hegemonic inequalities, they began to challenge their power dynamics by offering alternative representations of symbols that should also carry such national and international significance, like the experiences of marginalized populations and sites of environmental devastation.
+    </p>
   </div>
+
 
   <!-- Narrative Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="narrative">
@@ -70,19 +112,27 @@
       <br><br>After cleaning data for geographical locations we had to produce latitude and longitude for all the locations to create an interactive spatial visualization that centers the structure of Notre Dame and spans outward to the locations from where user were tweeting. This visualization was produced to demonstrate the complexities of digital communication in a globalized society where people across the world are able to articulate conversations, interactive discourse, and community across nations on topics beyond the scope of their everyday lives.
       <br><br>To enhance the scope of this project and the complex ways in which people are now articulating and participating in wider discourse we also analyzed the use of emojis within the tweets. The use of emojis in tweets was compiled using Python and was analyzed looking through the varied quantities and categorizations of the top 20 emojis used during different days. The number of instance an emoji occured and changes in emoji categories were analyzed to help define the general sentiments and reactions twitter user had over the Notre Dame fire. The use of emoji analysis helped augment the text analysis of tweet completed through the ____ feature/s on Voyant Tools. All of the visualizations and text analysis competed for this project were compiled to be publicly showcased  for other scholars, Twitter users, and the general public to explore the topic and potentially use this project as a model for research endeavours on the Notre Dame fire or other topics.
       </p>
-      <br>
 
-      <h3 class="w3-text-light-grey">Findings</h3>
-      <img src="images\NotreDameFireTweets_staticmap.jpg" alt="NotreDameFireTweetsLocation" style="width:500px;">
-      <p>The geographical locations of where the tweets originates from covers a wide array of locations across the world, however they appear to be dispersed unevenly. The locations with the highest number of tweets appears to be North America, specifically concentrating on the United State of America, and Europe followed along by South America. A possible bias in this information is that the keywords “notre dame” recalled tweets in primarily French and English. However, this possible bias fails to account for the concentration of tweets from South America in comparison to other continents such as Australia. In South America the the official language of most countries is Spanish, with several exceptions such as Brazil, however it still shows a higher number of tweets on the Notre Dame fire than Australia whose official language designated is English. The low number of tweets on the Notre Dame fire from Australia indicate a possible correlation between the spatial geography and the concentration of tweets. While Australia fits within the language parameters of our Twitter scraping its further proximity to Notre Dame in comparison to other English speaking countries might account for the low number of tweets.
-      <br><br>
-      <div id="emoji-cloud-1"></div><br><em>Day of Fire</em><br><br>
-      <!-- <div id="emoji-cloud-2"></div><br><em>4 Days After Fire</em><br> -->
-      The emojis used in the tweets that were collected assist in portraying how reactions and emotions were conveyed through out the initial events of the fire to a period of a week following the Notre Dame fire. Distinctive shifts in the use of emoji also serve to visualize and mark shifts in the tone of the conversation regarding the fire and the attention being directed at Notre Dame. Different types of emojis were used to communicate emotional reactions, including facial expressions, hand gestures, flags along with other expressive icons such as hearts. The use of flags marks an importance shift in Twitter user conversations and situate the dominance of a high profile event like the Notre Dame fire that received wide coverage. The day prior to the Notre Dame fire four different flags were included in the top twenty emojis being used. The flags for France, England, the United Kingdom, and Syria were prevalent in twitter users discussion possibly indicating that the focus of discussion was on the missile strike launched by the United States, France, and the United Kingdom on Syria. However, after the next day when the Notre Dame fire occured the only flag prevalent in the twenty used emojis was the French flag. While the prevalent use of the French emoji helps indicate a shift in the overarching conversation the use of facial expressions designates varied reactions that complicate how people might have perceived the Notre Dame fire and attention being directed towards the cathedral beyond what news outlets issue. For example the day of the fire, the top three emojis used were the “loudly crying face,” french flag, and “broken heart” emojis the majority of the emojis used fell along this tone or sentiment of being upset or in distress over the fire, designated the location of the event (i.e. the church or “latin cross” emoji), or offered moral support through the “folded hands” emoji otherwise known as the praying hands emoji. Nevertheless, there was an outlier on the day of the event that fell outside this tone of grief, dejecton or moral support which was the “face with tears of joy.” Emojis that disrupted this notion of grief and support for Notre Dame became more prevalent in the conversation as time progressed shifting the tone of the discourse to allow space for a more critical perception of the attention being directed at Notre Dame following the fire.
+      <h3 class="w3-text-light-grey">Conclusion</h3>
+      <p>Sentiments of Notre Dame is able to explore how high profile incidents serve to garner an international sense of community and discourse via social media platforms such as Twitter. Twitter data of tweets spanning from the day of the Notre Dame fire and the following one week period helped contextualize this scenario. This data revealed not only that Twitter offered a platform for users to react and contribute to the memory making process of the Notre Dame fire they were able to redirect the tone and focus of the narrative. Text analysis of tweet content including emojis reveals that Notre Dame was able to function as an anchor to globally unify Twitter users to lament the damage to Notre Dame and to bridge conversations of other important issues that critically address the valorization of Notre Dame. Furthermore, the designated geographical locations of Twitter users reveals the global extent of these conversations. Overall, the Notre Dame fire is a timely relevant example of how the use of social media proliferates imagined communities and allows for distinct, multifaceted conversations to take place within the same space.
       </p>
-      <br>
 
-    </p>
+      <h3 class="w3-text-light-grey">References</h3>
+      <p>
+        <em>Anderson, Benedict R. O’G. Imagined Communities : Reflections on the Origin and Spread of Nationalism. Vol. Rev. and extended ed. London: Verso, 1991. http://search.ebscohost.com/login.aspx?direct=true&db=nlebk&AN=729895&site=ehost-live.
+        </em>
+        <br><br>
+        <em>Danesi, Marcel. The Semiotics of Emoji: The Rise of Visual Language in the Age of the Internet. Bloomsbury Publishing, 2016.
+        </em>
+        <br><br>
+        <em>Henley, Josh. “Notre Dame Cathedral fire – a visual guide and timeline.” The Guardian, April 16, 2019. https://www.theguardian.com/world/2019/apr/16/notre-dame-cathedral-fire-a-visual-guide-and-timeline.
+        </em>
+        <br><br>
+        <em>Rothberg, Michael. "Introduction: Between Memory and Memory: From Lieux De Mémoire to Noeuds De Mémoire." Yale French Studies, no. 118/119 (2010): 3-12. http://www.jstor.org/stable/41337077.
+        </em>
+        <br><br>
+        <em>Notre Dame model is credited to <a href="https://skfb.ly/6JAVA"><strong>agence Lowco</strong></a></em>
+        </p>
   </div>
 
   <!-- About Section -->
@@ -117,12 +167,11 @@
 <script src="js/node_modules/three/examples/js/loaders/GLTFLoader.js"></script>
 <script src="js/node_modules/three/examples/js/controls/OrbitControls.js"></script>
 <script src="js/node_modules/three/examples/js/WebGL.js"></script>
-<!-- <script type="text/javascript" src="data/lat.js"></script>
-<script type="text/javascript" src="data/long.js"></script> -->
 <script type="text/javascript" src="data/test.js"></script>
 <script type="text/javascript" src="js/map.js"></script>
 
 <script type="text/javascript" src="node_modules/javiros-emoji-cloud/dist/emojicloud.js"></script>
 <script type="text/javascript" src="node_modules/javiros-emoji-cloud/dist/wordcloud.js"></script>
 <script type="text/javascript" src="js/emoji.js"></script>
+<script type="text/javascript" src="js/emoji2.js"></script>
 </html>
